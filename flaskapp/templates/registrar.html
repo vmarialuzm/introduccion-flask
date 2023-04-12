@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Campos de Alumno</h1>
+    <form action="" method="post" novalidate>
+        {{formAl.hidden_tag()}}
+        <p>
+            {{formAl.id.label}} <br>
+            {{formAl.id(size=32)}} <br>
+            {% for error in formAl.id.errors %}
+            <span style="color:red">{{error}}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{formAl.nombre.label}} <br>
+            {{formAl.nombre(size=32)}} <br>
+            {% for error in formAl.nombre.errors %}
+            <span style="color:red">{{error}}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{formAl.apellido.label}} <br>
+            {{formAl.apellido(size=32)}} <br>
+            {% for error in formAl.apellido.errors %}
+            <span style="color:red">{{error}}</span>
+            {% endfor %}
+        </p>
+        <h1>Campos de Salon</h1>
+        <p>
+            {{formSa.aula.label}} <br>
+            {{formSa.aula(size=32)}} <br>
+            {% for error in formSa.aula.errors %}
+            <span style="color:red">{{error}}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{formSa.horaEntrada.label}} <br>
+            {{formSa.horaEntrada(size=32)}} <br>
+            {% for error in formSa.horaEntrada.errors %}
+            <span style="color:red">{{error}}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{formSa.submit()}}
+        </p>
+    </form>
+</body>
+</html>
